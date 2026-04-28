@@ -10,6 +10,8 @@ output_dir="${project_root}/data/partitions"
 
 mkdir -p "$output_dir"
 
+find "$output_dir" -type f -name "20*.csv" -exec rm -f {} \;
+
 header=$(head -n 1 "$input_file")
 
 tail -n +2 "$input_file" | while IFS= read -r line; do

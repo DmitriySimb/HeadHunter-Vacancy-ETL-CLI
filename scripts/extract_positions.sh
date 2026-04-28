@@ -27,10 +27,5 @@ NR>1 {
         else level = level"/Senior"
     }
 
-    print $1"\","$2"\",\""level"\","$4","$5
+    print $1"\","$2"\",\""level"\","$4
 }' "$input_file" >> "$output_file"
-
-sed -i "" 's/,$//' "$output_file"
-
-# For Linux
-# sed -i 's/,$//' "$output_file"
